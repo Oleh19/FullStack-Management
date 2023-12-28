@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Activation email</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style type="text/css">
+      body {
+        margin: 0;
+        padding: 0;
+        min-width: 100%;
+        font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;
+        font-size: 16px;
+        line-height: 1.5;
+        background: white;
+        color: black;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Welcome to project</h1>
+    <p>Hello <%= user.name %>,</p>
+    <p>Thank you. please use the folloeing activation code:</p>
+    <h2><%= activationCode %></h2>
+  </body>
+</html>
