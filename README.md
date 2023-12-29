@@ -1,4 +1,5 @@
 # Project Description
+The project is a full-stack educational platform management system.
 
 ## Used Technologies:
 
