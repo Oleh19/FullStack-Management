@@ -14,6 +14,7 @@ Functional:
 - **Review in course**
 - **Create order**
 - **Notifications**
+- **Add and get members in admin dashboard**
 
 ## Used Technologies:
 
