@@ -6,13 +6,13 @@ Functional:
 
 (Backend)
 - **Registration (include user activation and social authentication)**
-- **update user info, password, avatar**
-- **create and edit course**
-- **get single and all courses**
-- **can get course content**
-- **can create question and reply in question**
-- **review in course**
-- **create order**
+- **Update user info, password, avatar**
+- **Create and edit course**
+- **Get single and all courses**
+- **Can get course content**
+- **Can create question and reply in question**
+- **Review in course**
+- **Create order**
 
 ## Used Technologies:
 
