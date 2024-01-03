@@ -1,6 +1,7 @@
-import { Response } from 'express';
+import { NextFunction, Response } from 'express';
 import { CatchAsyncError } from '../middleware/catchasyncErrors';
 import OrderModel from '../models/order.model';
+import ErrorHandler from '../utils/ErrorHandler';
 
 //create new order
 export const newOrder = CatchAsyncError(async (data: any, res: Response) => {
@@ -11,3 +12,13 @@ export const newOrder = CatchAsyncError(async (data: any, res: Response) => {
     order,
   });
 });
+
+//get all orders
+export const getAllOrdersService = async (res: Response) => {
+  const orders = await OrderModel.find().sort({ createdAt: -1 });
+
+  res.status(201).json({
+    success: true,
+    orders,
+  });
+};
