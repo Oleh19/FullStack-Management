@@ -13,6 +13,7 @@ Functional:
 - **Can create question and reply in question**
 - **Review in course**
 - **Create order**
+- **Notifications**
 
 ## Used Technologies:
 
