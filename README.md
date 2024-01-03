@@ -1,5 +1,18 @@
 # Project Description
+
 The project is a full-stack educational platform management system.
+
+Functional:
+
+(Backend)
+- **Registration (include user activation and social authentication)**
+- **update user info, password, avatar**
+- **create and edit course**
+- **get single and all courses**
+- **can get course content**
+- **can create question and reply in question**
+- **review in course**
+- **create order**
 
 ## Used Technologies:
 
