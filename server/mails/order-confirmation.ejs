@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div>
+      <div>
+        <h1>your order is confirmed!</h1>
+        <p>And we're just as excited as you are.</p>
+      </div>
+      <br />
+      <br />
+      <div>
+        <h4>Here's what you ordered:</h4>
+        <table style="border-bottom: 1px solid black">
+          <tr>
+            <td>Order: #: <%= order._id %></td>
+            <td>Order Date: <%= order.date %></td>
+          </tr>
+        </table>
+        <table style="width: 90%; margin: auto; display: block">
+          <tr>
+            <td>Item</td>
+            <td>Qty</td>
+            <td>Cost</td>
+          </tr>
+        </table>
+
+        <table style="width: 90%; margin: auto; display: block">
+          <tr>
+            <td><%= order.name %></td>
+            <td>1</td>
+            <td><%= order.price %></td>
+          </tr>
+        </table>
+
+        <table style="border-top: 1px solid black">
+          <tr>
+            <td>Subtotal:</td>
+            <td>$<%= order.price %></td>
+          </tr>
+        </table>
+      </div>
+      <div>
+        <p>
+          If you hane any question< please contact our support team at
+          <a href="mailto:qq190619982gmail.com"></a>
+        </p>
+        <p>&copy; 2024. All rights reserved.</p>
+      </div>
+    </div>
+  </body>
+</html>
