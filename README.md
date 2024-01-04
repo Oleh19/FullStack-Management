@@ -15,6 +15,7 @@ Functional:
 - **Create order**
 - **Notifications**
 - **Add and get members in admin dashboard**
+- **Users, Orders and Courses analytics**
 
 ## Used Technologies:
 
