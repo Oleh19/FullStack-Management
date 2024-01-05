@@ -16,6 +16,7 @@ Functional:
 - **Notifications**
 - **Add and get members in admin dashboard**
 - **Users, Orders and Courses analytics**
+- **Can create and edit FAQ, Categories and Hero banner**
 
 ## Used Technologies:
 
