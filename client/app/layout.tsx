@@ -1,19 +1,32 @@
-'user client';
-import React, { FC, useState } from 'react';
-import Heading from './utils/Heading';
+import './globals.css';
+import type { Metadata } from 'next';
+import { Poppins } from 'next/font/google';
+import { Josefin_Sans } from 'next/font/google';
+import { ReactNode } from 'react';
+import { ThemeProvider } from './utils/theme-provider';
 
-interface Props {}
+const poppins = Poppins({
+  subsets: ['latin'],
+  weight: ['400', '500', '600', '700'],
+  variable: '--font-Poppins',
+});
 
-const Page: FC<Props> = () => {
+const josefin = Josefin_Sans({
+  subsets: ['latin'],
+  weight: ['400', '500', '600', '700'],
+  variable: '--font-Josefin',
+});
+
+export default function RootLayout({ children }: { children: ReactNode }) {
   return (
-    <div>
-      <Heading
-        title='Learning website'
-        description='Platform for students to learn and get help from teachers'
-        keywords='Programming, MERN, Next, Redux, Full-Stack'
-      />
-    </div>
+    <html lang='eng'>
+      <body
+        className={`${poppins.variable} ${josefin.variable} !bg-white bg-no-repeat dark:bg-gradient-to-b dark:from-gray-900 dark:to-black duration-300 `}
+      >
+        <ThemeProvider attribute='class' defaultTheme='system' enableSystem>
+          {children}
+        </ThemeProvider>
+      </body>
+    </html>
   );
-};
-
-export default Page;
+}
