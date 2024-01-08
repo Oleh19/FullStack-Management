@@ -1,17 +1,23 @@
 'use client';
 import Link from 'next/link';
 import React, { FC, useState } from 'react';
-import NavItems from './NavItems';
-import { ThemeSwitcher } from './ThemeSwitcher';
+import NavItems from '../utils/NavItems';
+import { ThemeSwitcher } from '../utils/ThemeSwitcher';
 import { HiOutlineMenuAlt3, HiOutlineUserCircle } from 'react-icons/hi';
+import CustomModal from '../utils/CustomModal';
+import Login from './Auth/Login';
+import SignUp from './Auth/SignUp';
+import Verification from './Auth/Verification';
 
 type Props = {
   open: boolean;
   setOpen: (open: boolean) => void;
   activeItem: number;
+  route: string;
+  setRoute: (open: string) => void;
 };
 
-const Header: FC<Props> = ({ activeItem, setOpen }) => {
+const Header: FC<Props> = ({ activeItem, setOpen, route, open, setRoute }) => {
   const [active, setActive] = useState(false);
   const [openSideBar, setOpenSideBar] = useState(false);
 
@@ -38,7 +44,7 @@ const Header: FC<Props> = ({ activeItem, setOpen }) => {
       <div
         className={`${
           active
-            ? 'dark:bg-opacity-50 dark:bg-gradient-to-b dark:from-gray-900 dark:to-black fixed top-0 left-0 w-full h-[80px] z-[80] border-b dark:border=[#ffffff1c] shadow-xl transition duration-500'
+            ? 'dark:bg-opacity-50 dark:bg-gradient-to-b dark:from-gray-900 dark:to-black fixed top-0 left-0 w-full h-[80px] z-[80] border-b dark:border-[#ffffff1c] shadow-xl transition duration-500'
             : 'w-full border-b dark:border-[#ffffff1c] h-[80px] z-[80] dark:shadow'
         }`}
       >
@@ -68,7 +74,7 @@ const Header: FC<Props> = ({ activeItem, setOpen }) => {
 
               <HiOutlineUserCircle
                 size={25}
-                className='hidden 800px:block cursor-poiner  dark:text-white text-black'
+                className='hidden 800px:block cursor-poiner  dark:text-white text-black cursor-pointer'
                 onClick={() => setOpen(true)}
               />
             </div>
@@ -78,7 +84,7 @@ const Header: FC<Props> = ({ activeItem, setOpen }) => {
         {/* mobile sidebar */}
         {openSideBar && (
           <div
-            className='fixed  w-full h-screen top-0 left-0 z-[99999] dark:bg-[unset] bg-[#00000024]'
+            className='fixed w-full h-screen top-0 left-0 z-[99999] dark:bg-[unset] bg-[#00000024]'
             onClick={handleClose}
             id='screen'
           >
@@ -98,6 +104,48 @@ const Header: FC<Props> = ({ activeItem, setOpen }) => {
           </div>
         )}
       </div>
+
+      {route === 'Login' && (
+        <>
+          {open && (
+            <CustomModal
+              open={open}
+              setOpen={setOpen}
+              setRoute={setRoute}
+              activeItem={activeItem}
+              component={Login}
+            />
+          )}
+        </>
+      )}
+
+      {route === 'Sign-Up' && (
+        <>
+          {open && (
+            <CustomModal
+              open={open}
+              setOpen={setOpen}
+              setRoute={setRoute}
+              activeItem={activeItem}
+              component={SignUp}
+            />
+          )}
+        </>
+      )}
+
+      {route === 'Verification' && (
+        <>
+          {open && (
+            <CustomModal
+              open={open}
+              setOpen={setOpen}
+              setRoute={setRoute}
+              activeItem={activeItem}
+              component={Verification}
+            />
+          )}
+        </>
+      )}
     </div>
   );
 };

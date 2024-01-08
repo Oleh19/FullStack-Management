@@ -9,6 +9,7 @@ interface Props {}
 const Page: FC<Props> = () => {
   const [open, setOpen] = useState(false);
   const [activeItem, setActiveItem] = useState(0);
+  const [route, setRoute] = useState('Login');
 
   return (
     <div className='h-screen'>
@@ -17,7 +18,13 @@ const Page: FC<Props> = () => {
         description='Platform for students to learn and get help from teachers'
         keywords='Programming, MERN, Next, Redux, Full-Stack'
       />
-      <Header open={open} activeItem={activeItem} setOpen={setOpen} />
+      <Header
+        open={open}
+        activeItem={activeItem}
+        setOpen={setOpen}
+        setRoute={setRoute}
+        route={route}
+      />
       <Hero />
     </div>
   );

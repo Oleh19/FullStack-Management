@@ -25,6 +25,10 @@ Functional:
 - **MongoDB**
 - **JWT**
 - **Redis**
+- **Next**
+- **Redux**
+- **Formik**
+- **Yup**
 
 <div style="text-align:center; background-color:white; padding:10px;">
   <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Typescript_logo_2020.svg/1200px-Typescript_logo_2020.svg.png" alt="TypeScript" width="auto" height="32"> 
