@@ -47,7 +47,7 @@ const SideBarProfile: FC<Props> = ({
               }`}
               onClick={() => setActive(2)}
           >
-              <RiLockPasswordLine size={20} fill='#fff'/>
+              <RiLockPasswordLine size={20} className='dark:text-white text-black'/>
               <h5 className='pl-2 800px:block hidden font-Poppins dark:text-white text-black'>
                   Change Password
               </h5>
@@ -59,7 +59,7 @@ const SideBarProfile: FC<Props> = ({
               }`}
               onClick={() => setActive(3)}
           >
-              <SiCoursera size={20} fill='#fff'/>
+              <SiCoursera size={20} className='dark:text-white text-black'/>
               <h5 className='pl-2 800px:block hidden font-Poppins dark:text-white text-black'>
                   Enrolled Courses
               </h5>
@@ -73,7 +73,7 @@ const SideBarProfile: FC<Props> = ({
                       }`}
                       href={'/admin'}
                   >
-                      <MdOutlineAdminPanelSettings size={20} fill='#fff'/>
+                      <MdOutlineAdminPanelSettings size={20} className='dark:text-white text-black'/>
                       <h5 className='pl-2 800px:block hidden font-Poppins dark:text-white text-black'>
                           Admin Dashboard
                       </h5>
@@ -87,7 +87,7 @@ const SideBarProfile: FC<Props> = ({
               }`}
               onClick={() => logOutHandler()}
           >
-              <AiOutlineLogout size={20} fill='#fff'/>
+              <AiOutlineLogout size={20} className='dark:text-white text-black'/>
               <h5 className='pl-2 800px:block hidden font-Poppins dark:text-white text-black'>
                   Log Out
               </h5>
