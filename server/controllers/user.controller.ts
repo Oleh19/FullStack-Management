@@ -64,7 +64,7 @@ export const registrationUser = CatchAsyncError(
 
         res.status(201).json({
           success: true,
-          message: `Please check youe email: ${user.email} to activate your account!`,
+          message: `Please check you email: ${user.email} to activate your account!`,
           activationToken: activationToken.token,
         });
       } catch (error: any) {
@@ -198,7 +198,7 @@ export const logoutUser = CatchAsyncError(
 export const updateAccessToken = CatchAsyncError(
   async (req: Request, res: Response, next: NextFunction) => {
     try {
-      const refresh_token = req.cookies.refreshToken as string;
+      const refresh_token = req.cookies.refresh_token as string;
       const decoded = jwt.verify(
         refresh_token,
         process.env.REFRESH_TOKEN as string

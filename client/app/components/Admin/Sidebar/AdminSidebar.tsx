@@ -32,14 +32,16 @@ interface ItemsProps {
 
 const Item:FC<ItemsProps> = ({title, to, icon, selected, setSelected}) => {
     return (
-        <MenuItem
-            active={selected === title}
-            onClick={() => setSelected(title)}
-            icon={icon}
-        >
-            <Typography className='!text-[16px] pl-2 !font-Poppins'>{title}</Typography>
-            <Link href={to} />
-        </MenuItem>
+        <Link href={to}>
+            <MenuItem
+                active={selected === title}
+                onClick={() => setSelected(title)}
+                icon={icon}
+            >
+                <Typography className='!text-[16px] pl-2 !font-Poppins'>{title}</Typography>
+            </MenuItem>
+        </Link>
+
     )
 }
 
@@ -72,7 +74,7 @@ const AdminSidebar = () => {
                 '& .pro-inner-item:hover': {
                     color: '#9396ff !important'
                 },
-                '& .pro-inner-item.active': {
+                '& .pro-menu-item.active': {
                     color: '#9396ff !important'
                 },
                 '& .pro-inner-item': {
@@ -105,9 +107,6 @@ const AdminSidebar = () => {
                     <MenuItem
                         onClick={() => setIsCollapsed(!isCollapsed)}
                         icon={isCollapsed ? <ArrowForwardIosIcons /> : undefined}
-                        style={{
-                            margin: '0 0 20px 0'
-                        }}
                     >
                         {!isCollapsed && (
                             <Box
@@ -122,9 +121,9 @@ const AdminSidebar = () => {
                                     </h3>
                                 </Link>
                                 <IconButton
-                                    onClick={() => setIsCollapsed(!isCollapsed)} className='inline-block dark:text-white'
+                                    className='inline-block dark:text-white'
                                 >
-                                    <ArrowBackIosIcon className='text-black dark:text-white'/>
+                                    <ArrowBackIosIcon  onClick={() => setIsCollapsed(!isCollapsed)} className='text-black dark:text-white'/>
                                 </IconButton>
                             </Box>
                         )}
@@ -206,13 +205,14 @@ const AdminSidebar = () => {
                         >
                             {!isCollapsed && 'Content'}
                         </Typography>
-                        <Item
-                            title={isCollapsed ? '' : 'create Course'}
-                            to='/admin/create-course'
-                            icon={<VideoCallIcon />}
-                            selected={selected}
-                            setSelected={setSelected}
-                        />
+                            <Item
+                                title={isCollapsed ? '' : 'Create Course'}
+                                to='/admin/create-course'
+                                icon={<VideoCallIcon />}
+                                selected={selected}
+                                setSelected={setSelected}
+                            />
+
                         <Item
                             title={isCollapsed ? '' : 'Live Course'}
                             to='/admin/courses'
@@ -229,7 +229,7 @@ const AdminSidebar = () => {
                             {!isCollapsed && 'Customization'}
                         </Typography>
                         <Item
-                            title={isCollapsed ? '' : 'hero'}
+                            title={isCollapsed ? '' : 'Hero'}
                             to='/admin/hero'
                             icon={<WebIcon />}
                             selected={selected}
